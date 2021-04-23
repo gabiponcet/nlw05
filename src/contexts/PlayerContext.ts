@@ -11,7 +11,10 @@ type Episode ={
 type PlayerContextData = {
   episodeList: Episode[];
   currentEpisodeIndex: number;
+  isPlaying:boolean;
   play:(episode: Episode) => void;//função foi criada em app e passada por contexto, logo, deve ser definida no PlayerContext
+  togglePlay: () => void;
+  setPlayingState: (state: boolean) => void;
 }
 
 export const PlayerContext = createContext({} as PlayerContextData);
